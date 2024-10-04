@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAFCART</title>
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/output.css" />
+  </head>
+  <body>
+    <!-- start Settings icon -->
+    <span
+      class="w-9 h-9 cursor-pointer rounded-md bg-primary fixed right-1 bottom-72 grid place-content-center z-[999999]"
+    >
+      <i class="fa-solid fa-gear text-white text-lg animate-spin-slow"></i>
+    </span>
+    <!-- end Settings icon -->
+
+    <!-- start Settings icon -->
+    <span
+      id="arrowUP"
+      class="w-9 h-9 cursor-pointer rounded-full bg-primary fixed right-2 bottom-14 md:bottom-6 place-content-center z-[999999] hidden"
+    >
+      <i class="fa-solid fa-arrow-up text-white"></i>
+    </span>
+    <!-- end Settings icon -->
+
+    <!-- start header -->
+    <header class="shadow bg-white sticky top-0 z-[9999999999]">
+      <div class="container flex justify-between items-center gap-5 py-4">
+        <span>
+          <img src="../images/logo.svg" alt="logo" />
+        </span>
+
+        <div
+          class="max-w-sm lg:max-w-md xl:max-w-lg w-full items-center relative border border-primary rounded-lg overflow-hidden hidden md:flex"
+        >
+          <span class="absolute top-2 left-2">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+
+          <input
+            type="search"
+            name="search"
+            class="w-full ps-8 px-3 py-2 outline-none border border-e-primary border-y-0 border-s-0"
+            placeholder="search"
+          />
+          <span
+            class="py-2 px-4 bg-primary text-white hover:bg-transparent hover:text-primary transition cursor-pointer"
+            >Search</span
+          >
+        </div>
+
+        <ul class="flex space-x-2 justify-evenly">
+          <li class="min-w-fit">
+            <a
+              href="./wishlist.html"
+              class="inline-block px-2 text-center hover:text-gray-600"
+            >
+              <div class="relative -mb-1">
+                <i class="fa-regular fa-heart text-xl transition"></i>
+                <span
+                  class="text-sm absolute -top-1 right-1 w-5 h-5 text-white bg-primary rounded-full"
+                  >4</span
+                >
+              </div>
+              <p class="text-sm transition">Wish List</p>
+            </a>
+          </li>
+
+          <li class="min-w-fit hidden md:block">
+            <a
+              href="./myCart.html"
+              class="inline-block px-2 text-center hover:text-gray-600"
+            >
+              <div class="relative -mb-1">
+                <i class="fa-solid fa-cart-shopping text-xl transition"></i>
+                <span
+                  class="text-sm absolute -top-1 -right-3 w-5 h-5 text-white bg-primary rounded-full"
+                  >8</span
+                >
+              </div>
+              <p class="text-sm transition">Cart</p>
+            </a>
+          </li>
+
+          <li class="min-w-fit relative group">
+            <a href="#" class="inline-block px-2 text-center hover:text-gray-600">
+              <div class="-mb-1">
+                <i class="fa-regular fa-user text-2xl transition"></i>
+              </div>
+              <p class="text-sm transition">Account</p>
+            </a>
+
+            <div class="shadow-md border rounded absolute top-20 right-0 w-fit p-4 py-5 bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:top-full transition-all">
+                <p class="font-semibold text-sm text-nowrap">Welcome to RAFCART Shop</p>
+                <div class="flex gap-3 my-3">
+                    <a href="./register.html" class="uppercase text-sm font-semibold text-white bg-primary w-1/2 py-1 rounded hover:bg-white hover:text-primary border border-primary text-center transition duration-300">join</a>
+                    <a href="./login.html" class="uppercase text-sm font-semibold text-primary bg-white w-1/2 py-1 rounded hover:bg-primary hover:text-white border border-primary text-center transition duration-300">sing in</a>
+                </div>
+
+                <ul class="mt-4 space-y-2">
+                    <li>
+                      <a href="./myAccount.html" class="flex items-center gap-3 text-neutral-700 hover:text-primary">
+                        <i class="fa-regular fa-address-card transition duration-300"></i>
+                        <span class="capitalize transition duration-300">my account</span>
+                      </a>
+                    </li>
+
+                    <li>
+                        <a href="./myOrders.html" class="flex items-center gap-3 text-neutral-700 hover:text-primary">
+                          <i class="fa-solid fa-gift transition duration-300"></i>
+                          <span class="capitalize transition duration-300">my order</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="./wishlist.html" class="flex items-center gap-3 text-neutral-700 hover:text-primary">
+                          <i class="fa-regular fa-heart transition duration-300"></i>
+                          <span class="capitalize transition duration-300">my wishlist</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="./myCart.html" class="flex items-center gap-3 text-neutral-700 hover:text-primary">
+                          <i class="fa-solid fa-cart-shopping transition duration-300"></i>
+                          <span class="capitalize transition duration-300">my cart</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="./login.html" class="flex items-center gap-3 text-neutral-700 hover:text-primary">
+                          <i class="fa-solid fa-power-off transition duration-300"></i>
+                          <span class="capitalize transition duration-300">log out</span>
+                        </a>
+                      </li>
+
+                  </ul>
+            </div>
+            
+
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- end header -->
+
+    <!-- start nav -->
+    <nav class="bg-slate-950 text-white hidden md:block">
+      <div class="container flex justify-between items-center">
+        <div class="flex items-center space-x-9">
+          <div class="relative group">
+            <div class="p-4 px-7 cursor-pointer bg-primary">
+              <i class="fa-solid fa-bars me-2"> </i>
+              <span>All categories</span>
+            </div>
+
+            <ul
+              class="shadow absolute top-20 left-0 w-full pt-2 divide-y bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:top-full transition-all"
+            >
+              <li class="text-gray-950 hover:bg-gray-200 transition">
+                <a href="#" class="inline-block w-full p-3 px-6">
+                  <i
+                    class="fa-solid fa-shoe-prints -rotate-90 text-xl text-primary w-8"
+                  ></i>
+                  <span>Shoes</span>
+                </a>
+              </li>
+
+              <li class="text-gray-950 hover:bg-gray-200 transition">
+                <a href="#" class="inline-block w-full p-3 px-6">
+                  <i class="fa-solid fa-person text-xl text-primary w-8"></i>
+                  <span>Men</span>
+                </a>
+              </li>
+
+              <li class="text-gray-950 hover:bg-gray-200 transition">
+                <a href="#" class="inline-block w-full p-3 px-6">
+                  <i
+                    class="fa-solid fa-person-dress text-xl text-primary w-8"
+                  ></i>
+                  <span>Women</span>
+                </a>
+              </li>
+
+              <li class="text-gray-950 hover:bg-gray-200 transition">
+                <a href="#" class="inline-block w-full p-3 px-6">
+                  <i class="fa-solid fa-plug text-xl text-primary w-8"></i>
+                  <span>Electronisc</span>
+                </a>
+              </li>
+
+              <li class="text-gray-950 hover:bg-gray-200 transition">
+                <a href="#" class="inline-block w-full p-3 px-6">
+                  <i
+                    class="fa-solid fa-headphones text-xl text-primary w-8"
+                  ></i>
+                  <span>Headphones</span>
+                </a>
+              </li>
+
+              <li class="text-gray-950 hover:bg-gray-200 transition">
+                <a href="#" class="inline-block w-full p-3 px-6">
+                  <i class="fa-regular fa-clock text-xl text-primary w-8"></i>
+                  <span>Watches</span>
+                </a>
+              </li>
+
+              <li class="text-gray-950 hover:bg-gray-200 transition">
+                <a href="#" class="inline-block w-full p-3 px-6">
+                  <i
+                    class="fa-solid fa-mobile-screen-button text-xl text-primary w-8"
+                  ></i>
+                  <span>Mobile</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="flex space-x-1">
+            <li class="hover:text-gray-300">
+              <a href="../index.html" class="inline-block px-3 transition"
+                >Home</a
+              >
+            </li>
+
+            <li class="hover:text-gray-300">
+              <a href="./shop.html" class="inline-block px-3 transition"
+                >Shop</a
+              >
+            </li>
+
+            <li class="hover:text-gray-300">
+              <a href="#" class="inline-block px-3 transition">Pages</a>
+            </li>
+
+            <li class="hover:text-gray-300">
+              <a href="#" class="inline-block px-3 transition">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <p><i class="fa-solid fa-phone"></i> Call: +20 112 3099 558</p>
+      </div>
+    </nav>
+    <!-- end nav -->
+
+    <!-- start nav bottom -->
+    <ul
+      class="shadow-inner space-x-2 justify-evenly fixed bottom-0 inset-x-0 py-3 flex md:hidden z-[99999] bg-white"
+    >
+      <li class="min-w-fit relative group">
+        <a href="#" class="inline-block px-2 text-center hover:text-gray-600">
+          <div class="-mb-1">
+            <i class="fa-solid fa-bars text-xl transition"></i>
+          </div>
+          <p class="text-sm transition">Menu</p>
+        </a>
+
+        <ul
+          class="shadow border absolute bottom-3/4 -left-1/2 w-44 divide-y invisible bg-white opacity-0 group-hover:opacity-100 group-hover:visible group-hover:bottom-full transition-all"
+        >
+          <li class="text-gray-950 hover:bg-gray-200 transition">
+            <a href="../index.html" class="inline-block w-full p-3 px-6">
+              Home
+            </a>
+          </li>
+
+          <li class="text-gray-950 hover:bg-gray-200 transition">
+            <a href="./shop.html" class="inline-block w-full p-3 px-6">
+              Shop
+            </a>
+          </li>
+
+          <li class="text-gray-950 hover:bg-gray-200 transition">
+            <a href="#" class="inline-block w-full p-3 px-6"> Pages </a>
+          </li>
+
+          <li class="text-gray-950 hover:bg-gray-200 transition">
+            <a href="#" class="inline-block w-full p-3 px-6"> Contact </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="min-w-fit relative group">
+        <a href="#" class="inline-block px-2 text-center hover:text-gray-600">
+          <div class="-mb-1">
+            <i class="fa-solid fa-list-ul text-xl transition"></i>
+          </div>
+          <p class="text-sm transition">Categories</p>
+        </a>
+
+        <ul
+          class="shadow border absolute bottom-3/4 -left-1/2 w-44 divide-y invisible bg-white opacity-0 group-hover:opacity-100 group-hover:visible group-hover:bottom-full transition-all"
+        >
+          <li class="text-gray-950 hover:bg-gray-200 transition">
+            <a href="#" class="inline-block w-full p-3 px-6">
+              <i
+                class="fa-solid fa-shoe-prints -rotate-90 text-xl text-primary w-8"
+              ></i>
+              <span>Shoes</span>
+            </a>
+          </li>
+
+          <li class="text-gray-950 hover:bg-gray-200 transition">
+            <a href="#" class="inline-block w-full p-3 px-6">
+              <i class="fa-solid fa-person text-xl text-primary w-8"></i>
+              <span>Men</span>
+            </a>
+          </li>
+
+          <li class="text-gray-950 hover:bg-gray-200 transition">
+            <a href="#" class="inline-block w-full p-3 px-6">
+              <i class="fa-solid fa-person-dress text-xl text-primary w-8"></i>
+              <span>Women</span>
+            </a>
+          </li>
+
+          <li class="text-gray-950 hover:bg-gray-200 transition">
+            <a href="#" class="inline-block w-full p-3 px-6">
+              <i class="fa-solid fa-plug text-xl text-primary w-8"></i>
+              <span>Electronisc</span>
+            </a>
+          </li>
+
+          <li class="text-gray-950 hover:bg-gray-200 transition">
+            <a href="#" class="inline-block w-full p-3 px-6">
+              <i class="fa-solid fa-headphones text-xl text-primary w-8"></i>
+              <span>Headphones</span>
+            </a>
+          </li>
+
+          <li class="text-gray-950 hover:bg-gray-200 transition">
+            <a href="#" class="inline-block w-full p-3 px-6">
+              <i class="fa-regular fa-clock text-xl text-primary w-8"></i>
+              <span>Watches</span>
+            </a>
+          </li>
+
+          <li class="text-gray-950 hover:bg-gray-200 transition">
+            <a href="#" class="inline-block w-full p-3 px-6">
+              <i
+                class="fa-solid fa-mobile-screen-button text-xl text-primary w-8"
+              ></i>
+              <span>Mobile</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="min-w-fit">
+        <a href="#" class="inline-block px-2 text-center hover:text-gray-600">
+          <div class="-mb-1">
+            <i class="fa-solid fa-magnifying-glass text-xl transition"></i>
+          </div>
+          <p class="text-sm transition">Search</p>
+        </a>
+      </li>
+
+      <li class="min-w-fit">
+        <a href="#" class="inline-block px-2 text-center hover:text-gray-600">
+          <div class="relative -mb-1">
+            <i class="fa-solid fa-cart-shopping text-xl transition"></i>
+            <span
+              class="text-sm absolute -top-1 -right-3 w-5 h-5 text-white bg-primary rounded-full"
+              >8</span
+            >
+          </div>
+          <p class="text-sm transition">Cart</p>
+        </a>
+      </li>
+    </ul>
+    <!-- end nav bottom -->
+
+
+    <!-- start Navigate  -->
+    <div class="container flex items-center gap-3 py-5">
+        <i class="fa-solid fa-house text-primary text-sm"></i>
+        <i class="fa-solid fa-chevron-right text-primary text-sm"></i>
+        <span class="cursor-pointer text-lg mb-1">My Account</span>
+      </div>
+    <!-- end Navigate  -->
+
+
+
+
+   
+ <!-- start main section -->
+ <section >
+    <!-- start sidebar and info -->
+    <div class="container flex flex-wrap md:flex-nowrap items-start gap-5 pb-10">
+      <!-- start sidebar -->
+      <div class="w-full md:w-72 relative">
+        <div class="flex items-center gap-2 p-3 shadow-md border rounded mb-5">
+            <img src="../images/download (2).jpeg" alt="user_img" loading="lazy" class="w-14 h-14 rounded-full border border-gray-200 p-2">
+            <div>
+                <p class="text-slate-700">Hello,</p>
+                <p class="font-medium text-lg">Ahmed aref</p>
+            </div>
+            <span class="sidebar-toggle block md:hidden ms-auto border border-primary px-2 cursor-pointer rounded hover:text-primary">
+                <i class="fa-solid fa-bars transition duration-300 text-lg"></i>
+            </span>
+        </div>
+        <div class="sidebar bg-white w-full max-w-72 opacity-0 invisible absolute left-0 top-10 md:opacity-100 md:visible md:static divide-y divide-gray-300 px-4 shadow-md border rounded transition-all duration-300">
+            <ul class="space-y-2 py-3">
+                <li>
+                    <a href="./myAccount.html" class="text-primary flex items-center gap-3">
+                        <i class="fa-regular fa-address-card text-lg"></i>
+                        <span class="capitalize font-semibold text-lg leading-none">manage my account</span>
+                    </a>
+                </li>
+                <li class="pl-8">
+                    <a href="./profileInformation.html" class="hover:text-primary">
+                        <span class="capitalize transition duration-300">profile Information</span>
+                    </a>
+                </li>
+                <li class="pl-8">
+                    <a href="./myAccount.html" class="hover:text-primary">
+                        <span class="capitalize transition duration-300">manage address</span>
+                    </a>
+                </li>
+                <li class="pl-8">
+                    <a href="./myAccount.html" class="hover:text-primary">
+                        <span class="capitalize transition duration-300">change password</span>
+                    </a>
+                </li>
+                
+            </ul>
+
+            <ul class="space-y-2 py-3">
+                <li>
+                    <a href="./myOrders.html" class="hover:text-primary flex items-center gap-3">
+                        <i class="fa-solid fa-gift text-lg transition duration-300"></i>
+                        <span class="capitalize font-semibold text-lg leading-none transition duration-300">my order history</span>
+                    </a>
+                </li>
+                <li class="pl-8">
+                    <a href="./myOrders.html" class="hover:text-primary">
+                        <span class="capitalize transition duration-300">my returns</span>
+                    </a>
+                </li>
+                <li class="pl-8">
+                    <a href="./myOrders.html" class="hover:text-primary">
+                        <span class="capitalize transition duration-300">my cancellations</span>
+                    </a>
+                </li>
+                <li class="pl-8">
+                    <a href="./myOrders.html" class="hover:text-primary">
+                        <span class="capitalize transition duration-300">my reviews</span>
+                    </a>
+                </li>
+                
+            </ul>
+
+            <ul class="space-y-2 py-3">
+                <li>
+                    <a href="./checkout.html" class="hover:text-primary flex items-center gap-3">
+                        <i class="fa-regular fa-credit-card text-lg transition duration-300"></i>
+                        <span class="capitalize font-semibold text-lg leading-none transition duration-300">payments methods</span>
+                    </a>
+                </li>
+                <li class="pl-8">
+                    <a href="./checkout.html" class="hover:text-primary">
+                        <span class="capitalize transition duration-300">voucher</span>
+                    </a>
+                </li>
+               
+                
+            </ul>
+
+            <ul class="space-y-2 py-3">
+                <li>
+                    <a href="./wishlist.html" class="hover:text-primary flex items-center gap-3">
+                        <i class="fa-regular fa-heart text-lg transition duration-300"></i>
+                        <span class="capitalize font-semibold text-lg leading-none transition duration-300">my wishlist</span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="space-y-2 py-3">
+                <li>
+                    <a href="./login.html" class="hover:text-primary flex items-center gap-3">
+                        <i class="fa-solid fa-power-off text-lg transition duration-300"></i>
+                        <span class="capitalize font-semibold text-lg leading-none transition duration-300">log out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+      </div>
+      <!-- end sidebar -->
+
+    <!-- start user info -->
+     <div class="flex-grow">
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
+           
+            <div class="p-4 pb-6 shadow rounded border">
+                <div class="flex items-center justify-between mb-3">
+                    <p class="capitalize text-xl font-semibold">personal profile</p>
+                    <a href="#" class="text-primary text-lg">Edit</a>
+                </div>
+                <p class="capitalize font-medium mb-1">Russell Ahmed</p>
+                <p class="mb-1">example@mail.com</p>
+                <p class="mb-1">(123) 456-789</p>
+            </div>
+            <div class="p-4 pb-6 shadow rounded border">
+                <div class="flex items-center justify-between mb-3">
+                    <p class="capitalize text-xl font-semibold">Shipping Address</p>
+                    <a href="#" class="text-primary text-lg">Edit</a>
+                </div>
+                <p class="capitalize font-medium mb-1">ralph bohner</p>
+                <p class="mb-1">3891 Ranchview Dr.</p>
+                <p class="mb-1">Richardson, Califora</p>
+                <p class="mb-1">(123) 456-789</p>
+            </div>
+            <div class="p-4 pb-6 shadow rounded border">
+                <div class="flex items-center justify-between mb-3">
+                    <p class="capitalize text-xl font-semibold">Billing Address</p>
+                    <a href="#" class="text-primary text-lg">Edit</a>
+                </div>
+                <p class="capitalize font-medium mb-1">ralph bohner</p>
+                <p class="mb-1">3891 Ranchview Dr.</p>
+                <p class="mb-1">Richardson, Califora</p>
+                <p class="mb-1">(123) 456-789</p>
+            </div>
+
+        </div>
+
+        <!-- start Recent Orders -->
+        <div class="p-6 shadow-md mt-7 border">
+            <h3 class="font-medium text-lg mb-4">Recent Orders</h3>
+            <div class="border p-5 mb-4">
+                <div class="flex items-center justify-between flex-wrap gap-3">
+                    <div class="flex items-center flex-wrap gap-4 md:gap-6">
+                        <img src="../images/products_images/product1.jpg" alt="img" loading="lazy" class="w-20">
+                        <img src="../images/products_images/product2.jpg" alt="img" loading="lazy" class="w-20">
+                    </div>
+                    <a href="#" class="capitalize font-medium px-6 py-2 text-primary border border-primary hover:text-white hover:bg-primary transition duration-300 rounded">view order</a>
+                </div>
+                <div class="flex justify-between flex-wrap mt-5 gap-4">
+                    <div>
+                        <p class="font-medium text-lg">Order Number</p>
+                        <p>23E34RT3</p>
+                    </div>
+                    <div>
+                        <p class="font-medium text-lg">Purchased</p>
+                        <p>01 March 2021</p>
+                    </div>
+                    <div>
+                        <p class="font-medium text-lg">Quantity</p>
+                        <p>x3</p>
+                    </div>
+                    <div>
+                        <p class="font-medium text-lg">Total</p>
+                        <p>$120</p>
+                    </div>
+                    <div>
+                        <p class="font-medium text-lg">Status</p>
+                        <p class="text-primary">Cancelled</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border p-5 mb-4">
+                <div class="flex items-center justify-between flex-wrap gap-3">
+                    <div class="flex items-center flex-wrap gap-4 md:gap-6">
+                        <img src="../images/products_images/product4.jpg" alt="img" loading="lazy" class="w-20">
+                        <img src="../images/products_images/product4.jpg" alt="img" loading="lazy" class="w-20">
+                    </div>
+                    <a href="#" class="capitalize font-medium px-6 py-2 text-primary border border-primary hover:text-white hover:bg-primary transition duration-300 rounded">view order</a>
+                </div>
+                <div class="flex justify-between flex-wrap mt-5 gap-4">
+                    <div>
+                        <p class="font-medium text-lg">Order Number</p>
+                        <p>23E34RT3</p>
+                    </div>
+                    <div>
+                        <p class="font-medium text-lg">Purchased</p>
+                        <p>01 March 2021</p>
+                    </div>
+                    <div>
+                        <p class="font-medium text-lg">Quantity</p>
+                        <p>x3</p>
+                    </div>
+                    <div>
+                        <p class="font-medium text-lg">Total</p>
+                        <p>$120</p>
+                    </div>
+                    <div>
+                        <p class="font-medium text-lg">Status</p>
+                        <p class="text-green-500">Delivered</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end Recent Orders -->
+     </div>
+    <!-- end user info -->
+
+    </div>
+    <!-- end sidebar and info -->
+  </section>
+  <!-- end main section -->
+
+
+
+
+
+
+    <!-- start Contact section -->
+    <section class="border bg-gray-100">
+    <div class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-12">
+        <div>
+            <a href="../index.html"><img src="../images/logo.svg" alt="logo" loading="lazy"></a>
+            <p class="mt-4 mb-7 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam corrupti vel, eaque alias quisquam similique totam cumque</p>
+            <form>
+                <h3 class="font-semibold text-lg uppercase mb-2">Newsletter</h3>
+                <div class="flex">
+                    <input type="email" placeholder="Your email address" class="outline-none px-3 py-2 w-full border border-gray-300 rounded-s-md focus:border-primary focus:shadow">
+                    <a href="#" class="uppercase border border-primary bg-primary text-white px-4 py-2  rounded-e-md hover:bg-transparent hover:text-primary transition">subscribe</a>
+                </div>
+            </form>
+        </div>
+        <div>
+            <h3 class="font-semibold text-lg uppercase mb-2">My Account</h3>
+            <ul>
+                <li class="py-1">
+                    <a href="#" class="capitalize hover:text-primary transition">orders</a>
+                </li>
+                <li class="py-1">
+                    <a href="#" class="capitalize hover:text-primary transition">wishlist</a>
+                </li>
+                <li class="py-1">
+                    <a href="#" class="capitalize hover:text-primary transition">track order</a>
+                </li>
+                <li class="py-1">
+                    <a href="#" class="capitalize hover:text-primary transition">manage account</a>
+                </li>
+                <li class="py-1">
+                    <a href="#" class="capitalize hover:text-primary transition">return order</a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="font-semibold text-lg uppercase mb-2">Information</h3>
+            <ul>
+                <li class="py-1">
+                    <a href="#" class="capitalize hover:text-primary transition">about us</a>
+                </li>
+                <li class="py-1">
+                    <a href="#" class="capitalize hover:text-primary transition">return policy</a>
+                </li>
+                <li class="py-1">
+                    <a href="#" class="capitalize hover:text-primary transition">terms & condition</a>
+                </li>
+                <li class="py-1">
+                    <a href="#" class="capitalize hover:text-primary transition">privacy policy</a>
+                </li>
+                <li class="py-1">
+                    <a href="#" class="capitalize hover:text-primary transition">FAQ</a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="font-semibold text-lg uppercase mb-2">Contact</h3>
+            <ul>
+                <li class="py-1 flex">
+                    <i class="fa-solid fa-location-dot me-3 mt-1 text-primary"></i>
+                    <span href="#" class="capitalize">7895 Dr New Albuquerue, NM 19800,
+                        United States Of America</span>
+                </li>
+                <li class="py-1 flex">
+                    <i class="fa-solid fa-phone mt-1 me-3 text-primary"></i>
+                    <span href="#" class="capitalize">+20 112 3099 558</span>
+                </li>
+
+                <li class="py-1 flex"></li>
+                <i class="fa-regular fa-envelope mt-1 me-3 text-primary"></i>
+                    <span href="#">aaref8626@gmail.com</span>
+                </li>
+                
+            </ul>
+            <div class="flex space-x-3 mt-4">
+                <a href="#" class="w-8 h-8 rounded-full bg-indigo-600 text-white grid place-content-center">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" class="w-8 h-8 rounded-full text-white grid place-content-center bg-cyan-500">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="#" class="w-8 h-8 rounded-full text-white grid place-content-center bg-pink-600">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+  </section>
+    <!-- end Contact section -->
+
+    <!-- start footer section -->
+    <footer class="bg-black mb-16 md:mb-0">
+    <div class="container flex flex-wrap gap-5 justify-center sm:justify-between items-center pt-5 pb-6">
+        <div class="flex items-center text-white">
+            <i class="fa-regular fa-copyright me-1"></i>
+            <p class="capitalize text-lg leading-none"><span class="uppercase">rafcart </span> - all rights reserved</p>
+        </div>
+        <div>
+            <img src="../images/payment-method.png" alt="payment_images" loading="lazy" class="w-72">
+        </div>
+    </div>
+ </footer>
+    <!-- end footer section -->
+
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/account.js"></script>
+  </body>
+</html>
